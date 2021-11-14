@@ -1,0 +1,50 @@
+/* Google Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+body {
+    text-align: center;
+    background-color: #151617;
+    font-family: 'Montserrat', Arial, sans-serif;
+    color: #737f82;
+}
+
+button {
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    width: 250px;
+    text-decoration: none;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 10px 30px;
+    display: inline-block;
+    margin: 15px 30px;
+    letter-spacing: 1px;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+
+/* Buttons */
+
+.btn-1 {
+    border: 1px solid #ffb71b;
+    color: #ffb71b;
+}
+
+
+/* Button a */
+
+.btn-a:hover,
+.btn-a:active {
+    color: #151617;
+    background: #ffb71b;
+}
+
+.btn-a {
+    overflow: hidden;
+}
