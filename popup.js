@@ -5,6 +5,10 @@ async function getTab() {
     return tabs[0].url;
 }
 
+
+
+
+
 // Function that opens current AEM page in Live site
 function openInLive() {
     getTab().then(url => {
