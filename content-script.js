@@ -1,13 +1,10 @@
 const PAGE_URL = location.href;
-let primaryToolBarLocation = document.getElementsByClassName('_coral-ActionBar-primary')[0];
+const PRIMARY_TOOLBAR_LOCATION = document.getElementsByClassName('_coral-ActionBar-primary')[0];
 
 
-
-
-primaryToolBarLocation.insertAdjacentHTML('beforeend', '<a href="#" id="openInLive1" class="btn-link">Open in Live</a>');
-// primaryToolBarLocation.insertAdjacentHTML('beforeend', '<a href="#" id="editIntl1" class="btn-link">Country</a>');
-primaryToolBarLocation.insertAdjacentHTML('beforeend', '<a href="#" id="openContentTree1" class="btn-link">Open in Content Tree</a>');
-primaryToolBarLocation.insertAdjacentHTML('beforeend', '<div class="dropdown"><button id="dropdown" class="dropbtn btn-link">Country</button><div class="dropdown-content" id="myDropdown"><a href="#" class="countryLink">OPEN ALL</a><a href="#" class="countryLink">EN-US</a><a href="#" class="countryLink">EN-GB</a><a href="#" class="countryLink">EN-IN</a><a href="#" class="countryLink">DE-DE</a><a href="#" class="countryLink">FR-FR</a><a href="#" class="countryLink">IT-IT</a><a href="#" class="countryLink">KO-KR</a><a href="#" class="countryLink">JA-JP</a><a href="#" class="countryLink">ZH-TW</a><a href="#" class="countryLink">ZH-CN</a></div></div>');
+PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<a id="openInLive1" class="btn-link">Open in Live</a>');
+PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<a id="openContentTree1" class="btn-link">Open in Content Tree</a>');
+PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<div class="dropdown"><button id="dropdown" class="dropbtn btn-link">Country</button><div class="dropdown-content" id="myDropdown"><a class="countryLink">OPEN ALL</a><a class="countryLink">EN-US</a><a class="countryLink">EN-GB</a><a class="countryLink">EN-IN</a><a class="countryLink">DE-DE</a><a class="countryLink">FR-FR</a><a class="countryLink">IT-IT</a><a class="countryLink">KO-KR</a><a class="countryLink">JA-JP</a><a class="countryLink">ZH-TW</a><a class="countryLink">ZH-CN</a></div></div>');
 
 
 // Function that opens current AEM page in Live site
@@ -66,10 +63,6 @@ openInLive1.addEventListener("click", async() => {
     openInLive();
 });
 
-
-// editIntl1.addEventListener("click", async() => {
-//     editIntl();
-// });
 
 openContentTree1.addEventListener("click", async() => {
     openContentTree();
