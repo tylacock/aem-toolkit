@@ -5,8 +5,8 @@ let primaryToolBarLocation = document.getElementsByClassName('_coral-ActionBar-p
 
 
 primaryToolBarLocation.insertAdjacentHTML('beforeend', '<a href="#" id="openInLive1" class="btn-link">Live</a>');
-primaryToolBarLocation.insertAdjacentHTML('beforeend', '<a href="#" id="editIntl1" class="btn-link">Intl</a>');
-primaryToolBarLocation.insertAdjacentHTML('beforeend', '<a href="#" id="openContentTree1" class="btn-link">Location</a>');
+primaryToolBarLocation.insertAdjacentHTML('beforeend', '<a href="#" id="editIntl1" class="btn-link">Country</a>');
+primaryToolBarLocation.insertAdjacentHTML('beforeend', '<a href="#" id="openContentTree1" class="btn-link">Content</a>');
 primaryToolBarLocation.insertAdjacentHTML('beforeend', '<div class="dropdown"><button id="dropdown" class="dropbtn btn-link" onclick="myFunction()">Dropdown<i class="fa fa-caret-down"></i></button><div class="dropdown-content" id="myDropdown"><a href="#">EN-US</a><a href="#">EN-GB</a><a href="#">EN-IN</a><a href="#">DE-DE</a><a href="#">FR-FR</a><a href="#">IT-IT</a><a href="#">KO-KR</a><a href="#">JA-JP</a><a href="#">ZH-TW</a><a href="#">ZH-CN</a></div></div>');
 
 
