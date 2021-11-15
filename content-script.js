@@ -7,15 +7,7 @@ let primaryToolBarLocation = document.getElementsByClassName('_coral-ActionBar-p
 primaryToolBarLocation.insertAdjacentHTML('beforeend', '<a href="#" id="openInLive1" class="btn-link">Live</a>');
 primaryToolBarLocation.insertAdjacentHTML('beforeend', '<a href="#" id="editIntl1" class="btn-link">Country</a>');
 primaryToolBarLocation.insertAdjacentHTML('beforeend', '<a href="#" id="openContentTree1" class="btn-link">Content</a>');
-primaryToolBarLocation.insertAdjacentHTML('beforeend', '<div class="dropdown"><button id="dropdown" class="dropbtn btn-link" onclick="myFunction()">Dropdown<i class="fa fa-caret-down"></i></button><div class="dropdown-content" id="myDropdown"><a href="#">EN-US</a><a href="#">EN-GB</a><a href="#">EN-IN</a><a href="#">DE-DE</a><a href="#">FR-FR</a><a href="#">IT-IT</a><a href="#">KO-KR</a><a href="#">JA-JP</a><a href="#">ZH-TW</a><a href="#">ZH-CN</a></div></div>');
-
-
-
-
-
-
-
-
+primaryToolBarLocation.insertAdjacentHTML('beforeend', '<div class="dropdown"><button id="dropdown" class="dropbtn btn-link" ">Dropdown<i class="fa fa-caret-down"></i></button><div class="dropdown-content" id="myDropdown"><a href="#" class="countryLink">EN-US</a><a href="#" class="countryLink">EN-GB</a><a href="#" class="countryLink">EN-IN</a><a href="#" class="countryLink">DE-DE</a><a href="#" class="countryLink">FR-FR</a><a href="#" class="countryLink">IT-IT</a><a href="#" class="countryLink">KO-KR</a><a href="#" class="countryLink">JA-JP</a><a href="#" class="countryLink">ZH-TW</a><a href="#" class="countryLink">ZH-CN</a></div></div>');
 
 
 // Function that opens current AEM page in Live site
@@ -86,3 +78,15 @@ openContentTree1.addEventListener("click", async() => {
 dropdown.addEventListener("click", async() => {
     toggleDropdown();
 });
+
+// Opens AEM page in corresponding country page.
+let countryButton = document.getElementsByClassName("countryLink");
+for (var i = 0, length = countryButton.length; i < length; i++) {
+    var anchor = countryButton[i];
+    anchor.addEventListener('click', function() {
+        // `this` refers to the anchor tag that's been clicked
+        let path = (PAGE_URL.substr(89));
+        let countryId = this.innerText;
+        window.open(`https://author-p16153-e39454.adobeaemcloud.com/editor.html/content/ansysincprogram/${countryId.toLowerCase()}/${path}`, '_blank');
+    }, true);
+};
