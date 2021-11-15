@@ -1,6 +1,13 @@
 let primaryToolBarLocation = document.getElementsByClassName('_coral-ActionBar-primary')[0];
-primaryToolBarLocation.insertAdjacentHTML('beforeend', '<button id="openInLive1" class="button btn-1 btn-a">Open In live</button>');
+// primaryToolBarLocation.insertAdjacentHTML('beforeend', '<button id="openInLive1" class="button btn-1 btn-a">Open In live</button>');
+primaryToolBarLocation.insertAdjacentHTML('beforeend', '<a href="#" id="openInLive1" class="btn-link">Live</a>');
+primaryToolBarLocation.insertAdjacentHTML('beforeend', '<a href="#" id="editIntl1" class="btn-link">Intl</a>');
+primaryToolBarLocation.insertAdjacentHTML('beforeend', '<a href="#" id="openContentTree1" class="btn-link">Location</a>');
 console.log(primaryToolBarLocation);
+
+
+
+
 
 
 
