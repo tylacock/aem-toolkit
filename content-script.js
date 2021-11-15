@@ -3,11 +3,19 @@ let primaryToolBarLocation = document.getElementsByClassName('_coral-ActionBar-p
 
 
 
-// primaryToolBarLocation.insertAdjacentHTML('beforeend', '<button id="openInLive1" class="button btn-1 btn-a">Open In live</button>');
+
 primaryToolBarLocation.insertAdjacentHTML('beforeend', '<a href="#" id="openInLive1" class="btn-link">Live</a>');
 primaryToolBarLocation.insertAdjacentHTML('beforeend', '<a href="#" id="editIntl1" class="btn-link">Intl</a>');
 primaryToolBarLocation.insertAdjacentHTML('beforeend', '<a href="#" id="openContentTree1" class="btn-link">Location</a>');
-console.log(primaryToolBarLocation);
+primaryToolBarLocation.insertAdjacentHTML('beforeend', '<div class="dropdown"><button id="dropdown" class="dropbtn btn-link" onclick="myFunction()">Dropdown<i class="fa fa-caret-down"></i></button><div class="dropdown-content" id="myDropdown"><a href="#">EN-US</a><a href="#">EN-GB</a><a href="#">EN-IN</a><a href="#">DE-DE</a><a href="#">FR-FR</a><a href="#">IT-IT</a><a href="#">KO-KR</a><a href="#">JA-JP</a><a href="#">ZH-TW</a><a href="#">ZH-CN</a></div></div>');
+
+
+
+
+
+
+
+
 
 
 // Function that opens current AEM page in Live site
@@ -41,6 +49,26 @@ function editIntl() {
 function openContentTree() {
     window.open(PAGE_URL.replace('/editor.html/', '/sites.html/').slice(0, -5), '_blank');
 }
+
+
+function toggleDropdown() {
+    /* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+    document.getElementById("myDropdown").classList.toggle("show");
+
+    // Close the dropdown if the user clicks outside of it
+    window.onclick = function(e) {
+        if (!e.target.matches('.dropbtn')) {
+            var myDropdown = document.getElementById("myDropdown");
+            if (myDropdown.classList.contains('show')) {
+                myDropdown.classList.remove('show');
+            }
+        }
+    }
+}
+
+
+
 // Listeners
 openInLive1.addEventListener("click", async() => {
     openInLive();
@@ -51,38 +79,10 @@ editIntl1.addEventListener("click", async() => {
     editIntl();
 });
 
-
 openContentTree1.addEventListener("click", async() => {
     openContentTree();
 });
 
-// let string_of_html = `<button>POOP</button>`;
-// secondaryToolBarLocation.insertAdjacentHTML('afterbegin', string_of_html);
-// // let testbutton = document.createElement("button");
-// // testbutton.setAttribute("id", "openInLive1");
-// // testbutton.innerHTML = "TEST Button";
-
-// add the button to the div
-// secondaryToolBarLocation.insertAdjacentHTML('afterbegin', '<button id="openInLive1" class="button btn-1 btn-a">Open In live</button>');
-
-// let p = document.createElement("poop");
-// document.body.appendChild(p);
-
-
-// secondaryToolBarLocation.appendChild(p);
-
-// // Function that opens current AEM page in Live site
-// function openInLive() {
-//     getTab().then(url => {
-//         console.log(url);
-//         let country = url.substr(83, 5);
-//         let intlPath = url.substr(82).replace('/home/', '/');
-//         let usPath = url.substr(82).replace('/en-us/home/', '/');
-
-//         if (country !== 'en-us') {
-//             window.open(`https://www.ansys.com${intlPath}`, '_blank')
-//         } else {
-//             window.open(`https://www.ansys.com${usPath}`, '_blank')
-//         }
-//     })
-// }
+dropdown.addEventListener("click", async() => {
+    toggleDropdown();
+});
