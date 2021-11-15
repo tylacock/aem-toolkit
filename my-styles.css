@@ -2,31 +2,36 @@
     cursor: pointer;
     text-transform: none;
     text-decoration: none;
+    border: 1px solid #ddd;
     color: #4b4b4b;
     align-self: center;
     justify-self: center;
     text-align: center;
-    width: 100%;
     line-height: 32px;
     font-size: .9rem;
-    padding: 5px;
+    padding: 8px 5px;
     border-radius: 5px;
+    margin-left: 5px;
+    padding-top: 5px;
 }
 
 .btn-link:hover,
-.dropbtn:hover {
+.dropbtn:hover,
+.dropdown:hover {
     background: #ddd;
 }
 
 .dropdown {
     float: left;
     overflow: hidden;
+    border-radius: 5px;
 }
 
 .dropdown .dropbtn {
     border: none;
     background: transparent;
-    padding: 0;
+    border: 1px solid #ddd;
+    padding: 0 8px;
 }
 
 .dropdown-content {
