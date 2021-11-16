@@ -6,20 +6,27 @@
 </head>
 
 <body>
-    <button id="openInLive1" class="button btn-1 btn-a">Open In live</button>
-    <button id="editInAEM1" class="button btn-1 btn-a">Open in AEM</button>
-    <button id="editIntl1" class="button btn-1 btn-a">Edit all other Versions</button>
-    <button id="openContentTree1" class="button btn-1 btn-a">View in Content tree</button>
-    <hr>
-    <input type="text" id="slugInput" value="Slug">
 
-    <button id="slugifyBTN" class="button btn-1 btn-a">slugify</button>
-    <p id="slugLabel">TESTST</p>
+
+    <div class="container">
+        <div class="buttons">
+            <button id="openInLive1" class="button btn-1 btn-a">Open In live</button>
+            <button id="editInAEM1" class="button btn-1 btn-a">Open in AEM</button>
+            <button id="editIntl1" class="button btn-1 btn-a">Edit all</button>
+            <button id="openContentTree1" class="button btn-1 btn-a">View in Content tree</button>
+        </div>
+        <hr>
+        <div class="slug-area">
+            <input type="text" id="slugInput" placeholder="Enter text you want to slugify">
+            <button id="slugifyBTN" class="button btn-1 btn-a btn-slug">Slug</button>
+            <p id="slugLabel"></p>
+        </div>
+
+
+    </div>
 
 
     <script src="popup.js"></script>
-    <script>
-    </script>
 </body>
 
 </html>

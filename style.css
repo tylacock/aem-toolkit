@@ -8,6 +8,10 @@ body {
     color: #737f82;
 }
 
+.container {
+    width: 65em;
+}
+
 button {
     border: none;
     font-family: inherit;
@@ -19,7 +23,7 @@ button {
     cursor: pointer;
     padding: 10px 30px;
     display: inline-block;
-    margin: 15px 30px;
+    margin: 5px 15px;
     letter-spacing: 1px;
     outline: none;
     position: relative;
@@ -47,4 +51,14 @@ button {
 
 .btn-a {
     overflow: hidden;
+}
+
+#slugInput {
+    width: 33em;
+}
+
+#slugLabel {
+    background: #3e3e3e;
+    padding: 5px;
+    color: #fff;
 }
