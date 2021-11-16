@@ -5,10 +5,6 @@ async function getTab() {
     return tabs[0].url;
 }
 
-
-
-
-
 // Function that opens current AEM page in Live site
 function openInLive() {
     getTab().then(url => {
@@ -63,6 +59,26 @@ function openContentTree() {
 }
 
 
+function slugify() {
+    let input = document.getElementById("slugInput").value;
+    const a = 'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìıİłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;'
+    const b = 'aaaaaaaaaacccddeeeeeeeegghiiiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------'
+    const p = new RegExp(a.split('').join('|'), 'g')
+
+
+    let slugifiedString = input.toString().toLowerCase()
+        .replace(/\s+/g, '-') // Replace spaces with -
+        .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
+        .replace(/&/g, '-and-') // Replace & with 'and'
+        .replace(/[^\w\-]+/g, '') // Remove all non-word characters
+        .replace(/\-\-+/g, '-') // Replace multiple - with single -
+        .replace(/^-+/, '') // Trim - from start of text
+        .replace(/-+$/, '') // Trim - from end of text
+
+    document.getElementById("slugLabel").innerHTML = slugifiedString;
+}
+
+
 
 // Listeners
 
@@ -84,4 +100,8 @@ editIntl1.addEventListener("click", async() => {
 
 openContentTree1.addEventListener("click", async() => {
     openContentTree();
+});
+
+slugifyBTN.addEventListener("click", async() => {
+    slugify();
 });

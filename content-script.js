@@ -63,7 +63,6 @@ openInLive1.addEventListener("click", async() => {
     openInLive();
 });
 
-
 openContentTree1.addEventListener("click", async() => {
     openContentTree();
 });
