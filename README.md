@@ -8,6 +8,8 @@
 * Verifcation??
 * Refactor location of inline buttons?
     * Reduce to one mega dropdown
+* Add preview button
+* Add keyboard shortcuts
 
 
 
