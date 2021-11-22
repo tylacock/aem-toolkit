@@ -14,4 +14,4 @@
 
 
 ### Bugs
-* Open in Content Tree button sometimes adds "." to end of URL
+* ~~Open in Content Tree button sometimes adds "." to end of URL~~
