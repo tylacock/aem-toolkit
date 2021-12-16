@@ -6,7 +6,6 @@
 * Verifcation??
 * Add preview button
 * Add keyboard shortcuts
-* Default AEM editor sidebar to be Content tree
 * A filename checker for DAM
 * Button to create a resource page from an event page
 
@@ -17,6 +16,7 @@
 * ~~Add slugify box in popup.html~~
 * ~~Refactor location of inline buttons?~~
     * ~~Reduce to one mega dropdown~~
+* ~~Default AEM editor sidebar to be Content tree~~
 
 
 
