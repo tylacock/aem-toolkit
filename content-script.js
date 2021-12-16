@@ -12,30 +12,11 @@ PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<a id="openInLive1" cl
 PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<a id="openContentTree1" class="btn-link">Open in Content Tree</a>');
 PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<div class="dropdown"><button id="dropdown" class="dropbtn btn-link">Country</button><div class="dropdown-content" id="myDropdown"><a class="countryLink">OPEN ALL</a><a class="countryLink">EN-US</a><a class="countryLink">EN-GB</a><a class="countryLink">EN-IN</a><a class="countryLink">DE-DE</a><a class="countryLink">FR-FR</a><a class="countryLink">IT-IT</a><a class="countryLink">KO-KR</a><a class="countryLink">JA-JP</a><a class="countryLink">ZH-TW</a><a class="countryLink">ZH-CN</a></div></div>');
 
-// Defaults editor toolbar to be on Content Tree instead of image viewer
-
-/*
-1. Select the content tree view (id="coral-id-772")
-2. Add .is-selected to content tree view
-3. Remove .is-selected class to Asset view tab id="coral-id-770"
-*/
-
+// Defaults editor toolbar to be on Content Tree instead of image viewer. Waits until page load
 window.onload = function() {
-    // const contentTreeTab = document.querySelector('#coral-id-772')
-    // console.log(contentTreeTab)
-    // const assetTab = document.querySelector('#coral-id-770')
-    // console.log(assetTab)
-
-
-    // contentTreeTab.classList.add("is-selected")
-    // assetTab.classList.remove("is-selected")
-
     const testTab = document.getElementById("coral-id-772")
     console.log(`testTab =======> ${testTab}`)
     testTab.click();
-
-
-
 }
 
 /* -------------------------------------------------------------
@@ -54,7 +35,6 @@ function openInLive() {
         window.open(`https://www.ansys.com${usPath}`, '_blank')
     }
 }
-
 
 // Function that opens current AEM page in all other international versions
 function editIntl() {
