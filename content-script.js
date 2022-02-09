@@ -1,4 +1,7 @@
+// Gets Current Tab URL
 const PAGE_URL = location.href;
+const COUNTRY_CODE = PAGE_URL.substr(83, 5);
+const COUNTRY_CODES_LIST = ["en-us", "en-in", "en-gb", "fr-fr", "de-de", "it-it", "ja-jp", "ko-kr", "zh-cn", "zh-tw"];
 
 
 /* -------------------------------------------------------------
@@ -15,7 +18,6 @@ PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<div class="dropdown">
 // Defaults editor toolbar to be on Content Tree instead of image viewer. Waits until page load
 window.onload = function() {
     const testTab = document.getElementById("coral-id-772")
-    console.log(`testTab =======> ${testTab}`)
     testTab.click();
 }
 
@@ -25,11 +27,10 @@ Toolbar button functions
 
 // Function that opens current AEM page in Live site
 function openInLive() {
-    let country = PAGE_URL.substr(83, 5);
     let intlPath = PAGE_URL.substr(82).replace('/home/', '/');
     let usPath = PAGE_URL.substr(82).replace('/en-us/home/', '/');
 
-    if (country !== 'en-us') {
+    if (COUNTRY_CODE !== 'en-us') {
         window.open(`https://www.ansys.com${intlPath}`, '_blank')
     } else {
         window.open(`https://www.ansys.com${usPath}`, '_blank')
@@ -38,13 +39,11 @@ function openInLive() {
 
 // Function that opens current AEM page in all other international versions
 function editIntl() {
-    let country = PAGE_URL.substr(83, 5);
     let path = (PAGE_URL.substr(89));
-    const countryCodes = ["en-us", "en-in", "en-gb", "fr-fr", "de-de", "it-it", "ja-jp", "ko-kr", "zh-cn", "zh-tw"];
 
-    for (let i = 0; i < countryCodes.length; i++) {
-        if (country !== countryCodes[i]) {
-            window.open(`https://author-p16153-e39454.adobeaemcloud.com/editor.html/content/ansysincprogram/${countryCodes[i]}/${path}`, '_blank');
+    for (let i = 0; i < COUNTRY_CODES_LIST.length; i++) {
+        if (COUNTRY_CODE !== COUNTRY_CODES_LIST[i]) {
+            window.open(`https://author-p16153-e39454.adobeaemcloud.com/editor.html/content/ansysincprogram/${COUNTRY_CODES_LIST[i]}/${path}`, '_blank');
         }
     }
 }
@@ -82,12 +81,11 @@ for (var i = 0, length = countryButton.length; i < length; i++) {
 
 
         if (countryId === "OPEN ALL") {
-            let country = PAGE_URL.substr(83, 5);
-            const countryCodes = ["en-us", "en-in", "en-gb", "fr-fr", "de-de", "it-it", "ja-jp", "ko-kr", "zh-cn", "zh-tw"];
+            
 
-            for (let i = 0; i < countryCodes.length; i++) {
-                if (country !== countryCodes[i]) {
-                    window.open(`https://author-p16153-e39454.adobeaemcloud.com/editor.html/content/ansysincprogram/${countryCodes[i]}/${path}`, '_blank');
+            for (let i = 0; i < COUNTRY_CODES_LIST.length; i++) {
+                if (COUNTRY_CODE !== COUNTRY_CODES_LIST[i]) {
+                    window.open(`https://author-p16153-e39454.adobeaemcloud.com/editor.html/content/ansysincprogram/${COUNTRY_CODES_LIST[i]}/${path}`, '_blank');
                 }
             }
         } else {
