@@ -57,14 +57,6 @@ function editPreviewPage() {
     getTab().then(url => {
         window.open(url.replace('/content/', '/editor.html/content/').slice(0, -17), '_blank')
     })
-
-/*
-PREVIEW
-https://author-p16153-e39454.adobeaemcloud.com/content/ansysincprogram/ko-kr/home/campaigns/ansys-ask.html?wcmmode=disabled
-
-EDITOR
-https://author-p16153-e39454.adobeaemcloud.com/editor.html/content/ansysincprogram/ko-kr/home/campaigns/ansys-ask.html
-*/
 }
 
 // Function that opens current AEM in content tree
