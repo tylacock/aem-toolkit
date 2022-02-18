@@ -14,7 +14,8 @@ window.onload = function() {
         console.log(result.times_clicked)
         timesClicked = result.times_clicked
     });
-    
+
+    // TODO: Button clicks aren't being loaded on window load
     statsArea.innerHTML = timesClicked
     console.log(`YO WTF: ${timesClicked}`)
 }
@@ -132,7 +133,6 @@ openContentTree1.addEventListener("click", async() => {
 slugifyBTN.addEventListener("click", async() => {
     chrome.storage.sync.set({'times_clicked': timesClicked}, function() {
         timesClicked++
-        console.log('Value is set to ' + timesClicked);
       });
       statsArea.innerHTML = timesClicked
     slugify();
