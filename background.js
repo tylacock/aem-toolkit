@@ -1,10 +1,3 @@
-let color = '#3aa757';
-
-chrome.runtime.onInstalled.addListener(() => {
-    chrome.storage.sync.set({ color });
-    console.log('Default background color set to %cgreen', `color: ${color}`);
-});
-
 
 //Fires when select omnibox for extension
 chrome.omnibox.onInputStarted.addListener(function(){
@@ -19,7 +12,7 @@ chrome.omnibox.onInputEntered.addListener(function(text){
     
 
     switch (text) {
-        case "pr":
+        case "prod":
             chrome.tabs.create({url: "https://www.ansys.com/products"})
             break;
         case "fl":
