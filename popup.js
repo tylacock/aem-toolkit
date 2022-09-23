@@ -2,7 +2,8 @@
 async function getTab() {
     let queryOptions = { active: true, currentWindow: true };
     let tabs = await chrome.tabs.query(queryOptions);
-    return tabs[0].url;
+    let cleanUrl = tabs[0].url
+    return cleanUrl.split('#')[0];
 }
 
 // Stats stuff
