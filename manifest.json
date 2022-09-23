@@ -2,6 +2,7 @@
     "name": "Ansys AEM Toolkit",
     "description": "Adds shortcuts and various tools to help content authorers in AEM.",
     "version": "1.0",
+    "omnibox": { "keyword" : "ans" },
     "manifest_version": 3,
     "background": {
         "service_worker": "background.js"

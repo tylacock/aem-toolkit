@@ -5,6 +5,26 @@ async function getTab() {
     return tabs[0].url;
 }
 
+// Stats stuff
+let timesClicked = 0
+const statsArea = document.getElementById("stats")
+
+window.onload = function() {
+    chrome.storage.sync.get(['times_clicked'], function(result){
+        console.log(result.times_clicked)
+        timesClicked = result.times_clicked
+    });
+
+    // TODO: Button clicks aren't being loaded on window load
+    statsArea.innerHTML = timesClicked
+    console.log(`YO WTF: ${timesClicked}`)
+}
+
+
+
+
+
+
 // Function that opens current AEM page in Live site
 function openInLive() {
     getTab().then(url => {
@@ -111,6 +131,10 @@ openContentTree1.addEventListener("click", async() => {
 });
 
 slugifyBTN.addEventListener("click", async() => {
+    chrome.storage.sync.set({'times_clicked': timesClicked}, function() {
+        timesClicked++
+      });
+      statsArea.innerHTML = timesClicked
     slugify();
 });
 
