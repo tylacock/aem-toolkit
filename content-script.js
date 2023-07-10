@@ -13,7 +13,7 @@ const PRIMARY_TOOLBAR_LOCATION = document.getElementsByClassName('_coral-ActionB
 
 PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<a id="openInLive1" class="btn-link">Open in Live</a>');
 PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<a id="openContentTree1" class="btn-link">Open in Content Tree</a>');
-PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<div class="dropdown"><button id="dropdown" class="dropbtn btn-link">Country</button><div class="dropdown-content" id="myDropdown"><a class="countryLink">OPEN ALL</a><a class="countryLink">EN-US</a><a class="countryLink">EN-GB</a><a class="countryLink">EN-IN</a><a class="countryLink">DE-DE</a><a class="countryLink">FR-FR</a><a class="countryLink">IT-IT</a><a class="countryLink">KO-KR</a><a class="countryLink">JA-JP</a><a class="countryLink">ZH-TW</a><a class="countryLink">ZH-CN</a></div></div>');
+PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<div class="countrySelectDropdown"><button id="dropdown" class="dropbtn btn-link">Country</button><div class="dropdown-content" id="myDropdown"><a class="countryLink">OPEN ALL</a><a class="countryLink">EN-US</a><a class="countryLink">EN-GB</a><a class="countryLink">EN-IN</a><a class="countryLink">DE-DE</a><a class="countryLink">FR-FR</a><a class="countryLink">IT-IT</a><a class="countryLink">KO-KR</a><a class="countryLink">JA-JP</a><a class="countryLink">ZH-TW</a><a class="countryLink">ZH-CN</a></div></div>');
 
 // Defaults editor toolbar to be on Content Tree instead of image viewer. Waits until page load
 // window.onload = function() {

@@ -17,17 +17,17 @@
 
 .btn-link:hover,
 .dropbtn:hover,
-.dropdown:hover {
+.countrySelectDropdown:hover {
     background: #ddd;
 }
 
-.dropdown {
+.countrySelectDropdown {
     float: left;
     overflow: hidden;
     border-radius: 5px;
 }
 
-.dropdown .dropbtn {
+.countrySelectDropdown .dropbtn {
     border: none;
     background: transparent;
     border: 1px solid #ddd;
