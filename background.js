@@ -26,6 +26,22 @@ chrome.omnibox.onInputEntered.addListener(function(text){
 });
 
 
+
+// Context Menu 
+
+let contextMenuItem = {
+    "id": "AEM",
+    "title": "AEM",
+    "contexts": ["selection"]
+    };
+    chrome.contextMenus.create(contextMenuItem);
+
+
+    chrome.contextMenus.onClicked.addListener(function(clickData) {
+        console.log("OnClickData.menuItemId");
+        })
+
+
 //fires when input changes e.g keyUp
 // chrome.omnibox.onInputChanged.addListener(function(text, suggest){
 //     //could send a request to my server to autofill resuts to add here....
