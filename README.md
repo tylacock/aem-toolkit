@@ -1,24 +1,29 @@
 # aem-toolkit
-### TO-DO
+# Future eatures
+#### Likely
+* [ ] view if a target a/b is hitting page
+* [ ] Add right click support (context menus API)
+* [ ] Right click to add alt text to publish DAM image
+  * https://www.udemy.com/course/chatgpt-bot/
+* [ ] Add selected page URLs to clipboard and all international 
+* [ ] Show hidden form values in extension (campaign ID2 etc)
+* [ ] Add publish button on main content page for DAM
+* [ ] Right click to open in DAM
+  * Right click an image link to open in it up in its location
+* [ ] Right click to open an XF in its location
 
-* Add copy to clipboard function on slugify
-* add bookmarks / scratch pad (image names, etc)
-* Verifcation??
-* Add preview button
-* Add keyboard shortcuts
-* A filename checker for DAM
-* Button to create a resource page from an event page
-
-
-### Completed
-* ~~Add utility buttons inline into AEM~~
-* ~~Dropdown for country page selection~~
-* ~~Add slugify box in popup.html~~
-* ~~Refactor location of inline buttons?~~
-    * ~~Reduce to one mega dropdown~~
-* ~~Default AEM editor sidebar to be Content tree~~
+#### Maybe
+* [ ] Cache clear button 
+* [ ] Get AEM link from URL (ex: /content/en-us/home)
+* [ ] Fix Tab bug
+* [ ] Publish image straight from DAM content tree
+* [ ] Copy Live Image URL from DAM
+* [ ] Opens page in corresponding Salesforce page
+* [ ] Rollout check that notifies if page is translated
 
 
 
-### Bugs
-* ~~Open in Content Tree button sometimes adds "." to end of URL~~
+
+# Bugs
+* [ ] Injected button bar shows on wrong pages.![clipboard.png](inkdrop://file:xiR_gT1cF)
+
