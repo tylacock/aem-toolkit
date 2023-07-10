@@ -1,57 +1,24 @@
+// ContextMenu listener
+chrome.contextMenus.onClicked.addListener(genericOnClick);
 
-//Fires when select omnibox for extension
-chrome.omnibox.onInputStarted.addListener(function(){
-    //Set a default ...
-    console.log('event started...');
+// Alt Text click handler
+function genericOnClick(info) {
+    let chatGptURL = "https://chat.openai.com/"
+    chrome.tabs.create({ url: chatGptURL })
+}
+
+// Create contextMenu items
+chrome.runtime.onInstalled.addListener(function () {
+  chrome.contextMenus.create({
+    title: "AEM",
+    contexts: ["page"],
+    id: "MainParent"
+  })
+
+  chrome.contextMenus.create({
+    title: "Generate Alt Text",
+    contexts: ["page"],
+    parentId: "MainParent",
+    id: "altTextChild"
+  })
 });
-
-
-//fires when select option and press enter
-chrome.omnibox.onInputEntered.addListener(function(text){
-    //Open selection into a new tab
-    
-
-    switch (text) {
-        case "prod":
-            chrome.tabs.create({url: "https://www.ansys.com/products"})
-            break;
-        case "fl":
-            chrome.tabs.create({url: "https://www.ansys.com/products/fluids"})
-        case "ev":
-                chrome.tabs.create({url: "https://www.ansys.com/events"})
-        default:
-            chrome.tabs.create({url: "https://www.ansys.com/" + text})
-            break;
-    } 
-});
-
-
-
-// Context Menu 
-
-let contextMenuItem = {
-    "id": "AEM",
-    "title": "AEM",
-    "contexts": ["selection"]
-    };
-    chrome.contextMenus.create(contextMenuItem);
-
-
-    chrome.contextMenus.onClicked.addListener(function(clickData) {
-        console.log("OnClickData.menuItemId");
-        })
-
-
-//fires when input changes e.g keyUp
-// chrome.omnibox.onInputChanged.addListener(function(text, suggest){
-//     //could send a request to my server to autofill resuts to add here....
-//     //{}
-
-//     // Add suggestions to an array
-//     var suggestions = [];
-//     //search reddit
-//     suggestions.push({ deletable: true, content: "https://www.ansys.com/" + text, description: '(Open section ) '+text });
-
-//     // Return  suggestions
-//     suggest(suggestions);
-// });
