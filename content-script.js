@@ -15,11 +15,6 @@ PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<a id="openInLive1" cl
 PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<a id="openContentTree1" class="btn-link">Open in Content Tree</a>');
 PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<div class="countrySelectDropdown"><button id="dropdown" class="dropbtn btn-link">Country</button><div class="dropdown-content" id="myDropdown"><a class="countryLink">OPEN ALL</a><a class="countryLink">EN-US</a><a class="countryLink">EN-GB</a><a class="countryLink">EN-IN</a><a class="countryLink">DE-DE</a><a class="countryLink">FR-FR</a><a class="countryLink">IT-IT</a><a class="countryLink">KO-KR</a><a class="countryLink">JA-JP</a><a class="countryLink">ZH-TW</a><a class="countryLink">ZH-CN</a></div></div>');
 
-// Defaults editor toolbar to be on Content Tree instead of image viewer. Waits until page load
-// window.onload = function() {
-//     const testTab = document.getElementById("coral-id-772")
-//     testTab.click();
-// }
 
 /* -------------------------------------------------------------
 Toolbar button functions
@@ -111,3 +106,9 @@ openContentTree1.addEventListener("click", async() => {
 dropdown.addEventListener("click", async() => {
     toggleDropdown();
 });
+
+// Listens for text selection then sends selection to background.js
+document.addEventListener("selectionchange", () => {
+    let selectedText = document.getSelection().toString()
+    const response = chrome.runtime.sendMessage({text: selectedText});
+  });
