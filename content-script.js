@@ -9,12 +9,36 @@ Onload tweaks
 -------------------------------------------------------------*/
 
 // Adds button toolbar to editor page
-const PRIMARY_TOOLBAR_LOCATION = document.getElementsByClassName('_coral-ActionBar-primary')[0];
 
-PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<a id="openInLive1" class="btn-link">Open in Live</a>');
-PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<a id="openContentTree1" class="btn-link">Open in Content Tree</a>');
-PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<div class="countrySelectDropdown"><button id="dropdown" class="dropbtn btn-link">Country</button><div class="dropdown-content" id="myDropdown"><a class="countryLink">OPEN ALL</a><a class="countryLink">EN-US</a><a class="countryLink">EN-GB</a><a class="countryLink">EN-IN</a><a class="countryLink">DE-DE</a><a class="countryLink">FR-FR</a><a class="countryLink">IT-IT</a><a class="countryLink">KO-KR</a><a class="countryLink">JA-JP</a><a class="countryLink">ZH-TW</a><a class="countryLink">ZH-CN</a></div></div>');
 
+if (PAGE_URL.startsWith('https://author-p16153-e39454.adobeaemcloud.com/editor.html/')) {
+    const PRIMARY_TOOLBAR_LOCATION = document.getElementsByClassName('_coral-ActionBar-primary')[0];
+
+    PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<a id="openInLive1" class="btn-link">Open in Live</a>');
+    PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<a id="openContentTree1" class="btn-link">Open in Content Tree</a>');
+    PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<div class="countrySelectDropdown"><button id="dropdown" class="dropbtn btn-link">Country</button><div class="dropdown-content" id="myDropdown"><a class="countryLink">OPEN ALL</a><a class="countryLink">EN-US</a><a class="countryLink">EN-GB</a><a class="countryLink">EN-IN</a><a class="countryLink">DE-DE</a><a class="countryLink">FR-FR</a><a class="countryLink">IT-IT</a><a class="countryLink">KO-KR</a><a class="countryLink">JA-JP</a><a class="countryLink">ZH-TW</a><a class="countryLink">ZH-CN</a></div></div>');
+    
+    openInLive1.addEventListener("click", async() => {
+        openInLive();
+    });
+    
+    openContentTree1.addEventListener("click", async() => {
+        openContentTree();
+    });
+    
+    dropdown.addEventListener("click", async() => {
+        toggleDropdown();
+    });
+}
+
+
+/*
+EDITOR
+https://author-p16153-e39454.adobeaemcloud.com/editor.html/content/ansysincprogram/en-us/home/products/missions.html
+
+CONTENT BROWSER
+https://author-p16153-e39454.adobeaemcloud.com/sites.html/content/ansysincprogram/en-us/home/products/missions
+*/
 
 /* -------------------------------------------------------------
 Toolbar button functions
@@ -95,17 +119,7 @@ for (var i = 0, length = countryButton.length; i < length; i++) {
 /* -------------------------------------------------------------
 Listeners
 -------------------------------------------------------------*/
-openInLive1.addEventListener("click", async() => {
-    openInLive();
-});
 
-openContentTree1.addEventListener("click", async() => {
-    openContentTree();
-});
-
-dropdown.addEventListener("click", async() => {
-    toggleDropdown();
-});
 
 // Listens for text selection then sends selection to background.js
 document.addEventListener("selectionchange", () => {

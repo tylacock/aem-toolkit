@@ -17,7 +17,19 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
   switch (true) {
     case info.menuItemId.startsWith("alt"):
       let chatGptURL = "https://chat.openai.com/"
-      chrome.tabs.create({ url: chatGptURL })
+      // chrome.tabs.create({ url: chatGptURL })
+      // fetch('http://localhost:3000/api/generate?imageUrl=https://images.ansys.com/is/image/ansys/stk-space-systems', {
+      //   mode: 'no-cors',
+      //   headers: {
+      //     'Accept': 'application/json',
+      //   },
+      // })
+      // .then(response => {
+      //   console.log('Response status:', response.status);
+      //   return response.json();
+      // })
+      // .then(response => console.log(JSON.stringify(response)))
+      // .catch(error => console.error('Error:', error));
       break
     case info.menuItemId.startsWith("openImg"):
       let imgPath = DAM_PATH + SELECTED_TEXT
@@ -44,7 +56,8 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     title: "Generate Alt Text",
     contexts: ["all"],
     parentId: "MainParent",
-    id: "altTextChild"
+    id: "altTextChild",
+    enabled: false
   })
 
   chrome.contextMenus.create({
