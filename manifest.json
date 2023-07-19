@@ -24,7 +24,7 @@
         "128": "/images/ansys-icon_128.png"
     },
     "content_scripts": [{
-        "matches": ["https://author-p16153-e39454.adobeaemcloud.com/*"],
+        "matches": ["https://author-p16153-e39454.adobeaemcloud.com/*", "https://www.ansys.com/*"],
         "css": ["my-styles.css"],
         "js": ["content-script.js"],
         "run_at": "document_end"

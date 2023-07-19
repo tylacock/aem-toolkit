@@ -21,7 +21,34 @@ async function getTab() {
 //     console.log(`YO WTF: ${timesClicked}`)
 // }
 
+let cp2
 
+
+// Listener to grab selected text from content-script.js
+// Listener to grab selected text from content-script.js
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    cp2 = request.campaignsArray
+    console.log(cp2)
+    createCp2List(cp2)
+}
+)
+
+
+
+
+
+
+let createCp2List = (campaigns) => {
+    let campaignListHTML = ""
+    
+    campaigns.forEach(campaignID => {
+        campaignListHTML += `
+            <li><a href='https://ansys.lightning.force.com.mcas.ms/lightning/r/Campaign/${campaignID}/view' target="_blank">${campaignID}</a></li>
+        `
+    })
+document.getElementById("CampaignID2Display").innerHTML = campaignListHTML;
+    return campaignListHTML
+}
 
 
 

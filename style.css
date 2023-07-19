@@ -62,3 +62,15 @@ button {
     padding: 5px;
     color: #fff;
 }
+
+#CampaignID2Display {
+    list-style: none;
+}
+
+#CampaignID2Display > li {
+    padding: 3px;
+}
+
+#CampaignID2Display > li > a {
+    color: white;
+}

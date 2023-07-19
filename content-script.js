@@ -9,8 +9,6 @@ Onload tweaks
 -------------------------------------------------------------*/
 
 // Adds button toolbar to editor page
-
-
 if (PAGE_URL.startsWith('https://author-p16153-e39454.adobeaemcloud.com/editor.html/')) {
     const PRIMARY_TOOLBAR_LOCATION = document.getElementsByClassName('_coral-ActionBar-primary')[0];
 
@@ -30,6 +28,31 @@ if (PAGE_URL.startsWith('https://author-p16153-e39454.adobeaemcloud.com/editor.h
         toggleDropdown();
     });
 }
+
+
+
+
+
+window.onload = (event) => {
+        // Get campaignID2 ids and pass them to popup.js
+let allCampaignIDsArray = Array.from(document.querySelectorAll('[id^="campaignID2-"]'))
+    const values = allCampaignIDsArray.map(value => {
+        return value.value
+    })
+    console.log(values)
+
+    setTimeout(() => {
+        const response = chrome.runtime.sendMessage({campaignsArray: values});
+    console.log(response);
+      }, "2000");
+
+
+
+
+
+    
+}
+
 
 
 /*
