@@ -17,16 +17,18 @@
 
 .btn-link:hover,
 .dropbtn:hover,
-.countrySelectDropdown:hover {
+.countrySelectDropdown:hover,
+.XFcountrySelectDropdown:hover {
     background: #ddd;
 }
-
+.XFcountrySelectDropdown,
 .countrySelectDropdown {
     float: left;
     overflow: hidden;
     border-radius: 5px;
 }
 
+.XFcountrySelectDropdown .dropbtn,
 .countrySelectDropdown .dropbtn {
     border: none;
     background: transparent;
