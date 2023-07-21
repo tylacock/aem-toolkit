@@ -1,5 +1,6 @@
 // Gets Current Tab URL
 const PAGE_URL = location.href;
+const PATH_NAME = location.pathname
 const COUNTRY_CODE = PAGE_URL.substr(83, 5);
 const COUNTRY_CODES_LIST = ["en-us", "en-in", "en-gb", "fr-fr", "de-de", "it-it", "ja-jp", "ko-kr", "zh-cn", "zh-tw"];
 
@@ -54,15 +55,6 @@ let allCampaignIDsArray = Array.from(document.querySelectorAll('[id^="campaignID
 }
 
 
-
-/*
-EDITOR
-https://author-p16153-e39454.adobeaemcloud.com/editor.html/content/ansysincprogram/en-us/home/products/missions.html
-
-CONTENT BROWSER
-https://author-p16153-e39454.adobeaemcloud.com/sites.html/content/ansysincprogram/en-us/home/products/missions
-*/
-
 /* -------------------------------------------------------------
 Toolbar button functions
 -------------------------------------------------------------*/
@@ -90,10 +82,30 @@ function editIntl() {
     }
 }
 
+
+
+
 // Function that opens current AEM in content tree
 function openContentTree() {
-    window.open(PAGE_URL.replace('/editor.html/', '/sites.html/').slice(0, -5), '_blank');
+
+    // Checks if page is an XF or regular page
+    if (PATH_NAME.startsWith('/editor.html/content/experience-fragments/ansysincprogram')) {
+        window.open(PAGE_URL.replace('/editor.html/', '/aem/experience-fragments.html/').slice(0, -5), '_blank');
+    } else {
+        window.open(PAGE_URL.replace('/editor.html/', '/sites.html/').slice(0, -5), '_blank');
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
 
 // helper function to toggle the country dropwdown
 function toggleDropdown() {
