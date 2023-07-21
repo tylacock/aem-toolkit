@@ -3,23 +3,36 @@ const PAGE_URL = location.href;
 const PATH_NAME = location.pathname
 const COUNTRY_CODE = PAGE_URL.substr(83, 5);
 const COUNTRY_CODES_LIST = ["en-us", "en-in", "en-gb", "fr-fr", "de-de", "it-it", "ja-jp", "ko-kr", "zh-cn", "zh-tw"];
-
+let PAGE_TYPE = ''
 
 /* -------------------------------------------------------------
 Onload tweaks
 -------------------------------------------------------------*/
+// returns true if current page is an XF page
+const isXF = () => {
+    if (PATH_NAME.startsWith('/editor.html/content/experience-fragments/ansysincprogram')) {
+        return true
+    } else {
+        return false
+    }
+}
 
 // Adds button toolbar to editor page
 if (PAGE_URL.startsWith('https://author-p16153-e39454.adobeaemcloud.com/editor.html/')) {
     const PRIMARY_TOOLBAR_LOCATION = document.getElementsByClassName('_coral-ActionBar-primary')[0];
 
-    PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<a id="openInLive1" class="btn-link">Open in Live</a>');
+
+    if (!isXF()) {
+        PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<a id="openInLive1" class="btn-link">Open in Live</a>');
+        openInLive1.addEventListener("click", async() => {
+            openInLive();
+        });
+    }
+    
     PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<a id="openContentTree1" class="btn-link">Open in Content Tree</a>');
     PRIMARY_TOOLBAR_LOCATION.insertAdjacentHTML('beforeend', '<div class="countrySelectDropdown"><button id="dropdown" class="dropbtn btn-link">Country</button><div class="dropdown-content" id="myDropdown"><a class="countryLink">OPEN ALL</a><a class="countryLink">EN-US</a><a class="countryLink">EN-GB</a><a class="countryLink">EN-IN</a><a class="countryLink">DE-DE</a><a class="countryLink">FR-FR</a><a class="countryLink">IT-IT</a><a class="countryLink">KO-KR</a><a class="countryLink">JA-JP</a><a class="countryLink">ZH-TW</a><a class="countryLink">ZH-CN</a></div></div>');
     
-    openInLive1.addEventListener("click", async() => {
-        openInLive();
-    });
+    
     
     openContentTree1.addEventListener("click", async() => {
         openContentTree();
@@ -81,8 +94,6 @@ function editIntl() {
         }
     }
 }
-
-
 
 
 // Function that opens current AEM in content tree
@@ -148,6 +159,12 @@ for (var i = 0, length = countryButton.length; i < length; i++) {
 
     }, true);
 };
+
+
+
+/* -------------------------------------------------------------
+Helpers
+-------------------------------------------------------------*/
 
 
 
